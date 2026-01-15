@@ -1,4 +1,5 @@
 FROM eclipse-temurin:17
+WORKDIR /app
 EXPOSE 8081
-ADD target/order-service-0.0.1-SNAPSHOT.jar order-service-0.0.1-SNAPSHOT.jar
-ENTRYPOINT ["java","-jar","/order-service-0.0.1-SNAPSHOT.jar"]
+ADD target/*.jar app.jar
+ENTRYPOINT ["java","-jar","app.jar"]
